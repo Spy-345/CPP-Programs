@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+
+class Demo
+{
+    public:
+        int i, j;
+    
+    Demo()     //Default constructor
+    {
+        i = 0;
+        j = 0;
+    }
+
+    Demo(int a, int b)   //Parameterised Constructor
+    {
+        i = a;
+        j = b;
+    }
+
+    Demo(Demo &ref)  //Copy Constructor accepts object as parameter of same class.
+    {
+        i = ref.i;
+        j = ref.j;
+    }
+
+};
+int main()
+{
+    Demo obj1;
+    Demo obj2(11,21);
+    Demo obj3(obj2);  //Call by reference using the object of same class.
+
+    cout<<obj1.i<<"\t"<<obj1.j<<"\n";
+    cout<<obj2.i<<"\t"<<obj2.j<<"\n";
+    cout<<obj3.i<<"\t"<<obj3.j<<"\n";
+
+    return 0;
+
+}
